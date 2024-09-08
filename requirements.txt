@@ -1,0 +1,4 @@
+black==24.8.0
+fire==0.6.0
+pydantic==2.9.0
+sf2_loader==1.25
