@@ -42,7 +42,7 @@ def generate_guitar_notes(
 
     for i, text in enumerate(notes):
         for j, note in enumerate(text.split()):
-            filename = f"{output_dir}/{i + 1}{'abcdefghijklm'[j]}.wav"
+            filename = f"{output_dir}/{i + 1}{'abcdefghijklm'[j]}.mp3"
             Path(filename).parent.mkdir(parents=True, exist_ok=True)
 
             loader.export_note(
@@ -56,17 +56,17 @@ def generate_guitar_notes(
                 sample_width=2,
                 channels=2,
                 frame_rate=44100,
-                format="wav",
+                format="mp3",
                 effects=None,
                 bpm=80,
                 export_args={},
             )
 
             # Post-process to increase volume
-            audio = AudioSegment.from_wav(filename)
+            audio = AudioSegment.from_mp3(filename)
             gain = 16  # Increase volume by 16 dB
             louder_audio = audio + gain
-            louder_audio.export(filename, format="wav")
+            louder_audio.export(filename, format="mp3")
             print(f"Generated and amplified {filename}")
 
 
