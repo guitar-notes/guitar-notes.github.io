@@ -48,8 +48,8 @@ def generate_guitar_notes(
             loader.export_note(
                 name=filename,
                 note_name=note,
-                duration=2,
-                decay=1,
+                duration=1.0,
+                decay=0,
                 volume=100,
                 channel=0,
                 start_time=0,
