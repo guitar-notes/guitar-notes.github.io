@@ -1,21 +1,50 @@
 let objects = {};
 let randomIndex = -1;
 let randomIndex2 = -1;
+let audioContext;
 
 function playAudio(source) {
-  if (!objects[source]) {
-    objects[source] = new Audio(source);
-    objects[source].load();
+  // Initialize AudioContext if it doesn't exist
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
   }
 
-  let audio = objects[source];
+  if (!objects[source]) {
+    // Fetch the audio file
+    fetch(source)
+      .then(response => response.arrayBuffer())
+      .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+      .then(audioBuffer => {
+        objects[source] = {
+          buffer: audioBuffer,
+          source: null,
+          startTime: 0
+        };
+      })
+      .catch(error => console.error('Error loading audio:', error));
+  }
 
-  if (audio.currentTime > 0 && !audio.paused) {
-    // If audio is already playing, reset to beginning
-    audio.currentTime = 0;
+  let audioObj = objects[source];
+
+  if (audioObj && audioObj.buffer) {
+    const currentTime = audioContext.currentTime;
+
+    // If audio is already playing, stop it
+    if (audioObj.source) {
+      audioObj.source.stop();
+    }
+
+    // Create a new source
+    audioObj.source = audioContext.createBufferSource();
+    audioObj.source.buffer = audioObj.buffer;
+    audioObj.source.connect(audioContext.destination);
+
+    // Start playback
+    audioObj.source.start(0);
+    audioObj.startTime = currentTime;
   } else {
-    // If audio is not playing, start playback
-    audio.play();
+    console.log('Audio buffer not loaded yet, using HTML5 Audio');
+    new Audio(source).play()
   }
 }
 
