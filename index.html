@@ -15,12 +15,13 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
         }
         .column {
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
         button {
             margin: 5px 0;
@@ -34,24 +35,8 @@
 <h1>🎸 Guitar Notes Player</h1>
 
 <div class="grid-container">
-    <div class="column" id="column1">
-        <button onclick="playAudio('data/1a.mp3')">0</button>
-        <button onclick="playAudio('data/1b.mp3')">1</button>
-        <button onclick="playAudio('data/1c.mp3')">2</button>
-        <button onclick="playAudio('data/1d.mp3')">3</button>
-        <button onclick="playAudio('data/1e.mp3')">4</button>
-        <button onclick="playAudio('data/1f.mp3')">5</button>
-        <button onclick="playAudio('data/1g.mp3')">6</button>
-        <button onclick="playAudio('data/1h.mp3')">7</button>
-        <button onclick="playAudio('data/1i.mp3')">8</button>
-        <button onclick="playAudio('data/1j.mp3')">9</button>
-        <button onclick="playAudio('data/1k.mp3')">10</button>
-        <button onclick="playAudio('data/1l.mp3')">11</button>
-        <button onclick="playAudio('data/1m.mp3')">12</button>
-    </div>
-
     <div class="column" id="column2">
-        <button onclick="playAudio('data/2a.mp3')">0</button>
+        <button onclick="playAudio('data/2a.mp3')">A</button>
         <button onclick="playAudio('data/2b.mp3')">1</button>
         <button onclick="playAudio('data/2c.mp3')">2</button>
         <button onclick="playAudio('data/2d.mp3')">3</button>
@@ -60,14 +45,10 @@
         <button onclick="playAudio('data/2g.mp3')">6</button>
         <button onclick="playAudio('data/2h.mp3')">7</button>
         <button onclick="playAudio('data/2i.mp3')">8</button>
-        <button onclick="playAudio('data/2j.mp3')">9</button>
-        <button onclick="playAudio('data/2k.mp3')">10</button>
-        <button onclick="playAudio('data/2l.mp3')">11</button>
-        <button onclick="playAudio('data/2m.mp3')">12</button>
     </div>
 
     <div class="column" id="column3">
-        <button onclick="playAudio('data/3a.mp3')">0</button>
+        <button onclick="playAudio('data/3a.mp3')">D</button>
         <button onclick="playAudio('data/3b.mp3')">1</button>
         <button onclick="playAudio('data/3c.mp3')">2</button>
         <button onclick="playAudio('data/3d.mp3')">3</button>
@@ -76,14 +57,10 @@
         <button onclick="playAudio('data/3g.mp3')">6</button>
         <button onclick="playAudio('data/3h.mp3')">7</button>
         <button onclick="playAudio('data/3i.mp3')">8</button>
-        <button onclick="playAudio('data/3j.mp3')">9</button>
-        <button onclick="playAudio('data/3k.mp3')">10</button>
-        <button onclick="playAudio('data/3l.mp3')">11</button>
-        <button onclick="playAudio('data/3m.mp3')">12</button>
     </div>
 
     <div class="column" id="column4">
-        <button onclick="playAudio('data/4a.mp3')">0</button>
+        <button onclick="playAudio('data/4a.mp3')">G</button>
         <button onclick="playAudio('data/4b.mp3')">1</button>
         <button onclick="playAudio('data/4c.mp3')">2</button>
         <button onclick="playAudio('data/4d.mp3')">3</button>
@@ -92,14 +69,10 @@
         <button onclick="playAudio('data/4g.mp3')">6</button>
         <button onclick="playAudio('data/4h.mp3')">7</button>
         <button onclick="playAudio('data/4i.mp3')">8</button>
-        <button onclick="playAudio('data/4j.mp3')">9</button>
-        <button onclick="playAudio('data/4k.mp3')">10</button>
-        <button onclick="playAudio('data/4l.mp3')">11</button>
-        <button onclick="playAudio('data/4m.mp3')">12</button>
     </div>
 
     <div class="column" id="column5">
-        <button onclick="playAudio('data/5a.mp3')">0</button>
+        <button onclick="playAudio('data/5a.mp3')">B</button>
         <button onclick="playAudio('data/5b.mp3')">1</button>
         <button onclick="playAudio('data/5c.mp3')">2</button>
         <button onclick="playAudio('data/5d.mp3')">3</button>
@@ -108,14 +81,10 @@
         <button onclick="playAudio('data/5g.mp3')">6</button>
         <button onclick="playAudio('data/5h.mp3')">7</button>
         <button onclick="playAudio('data/5i.mp3')">8</button>
-        <button onclick="playAudio('data/5j.mp3')">9</button>
-        <button onclick="playAudio('data/5k.mp3')">10</button>
-        <button onclick="playAudio('data/5l.mp3')">11</button>
-        <button onclick="playAudio('data/5m.mp3')">12</button>
     </div>
 
     <div class="column" id="column6">
-        <button onclick="playAudio('data/6a.mp3')">0</button>
+        <button onclick="playAudio('data/6a.mp3')">E</button>
         <button onclick="playAudio('data/6b.mp3')">1</button>
         <button onclick="playAudio('data/6c.mp3')">2</button>
         <button onclick="playAudio('data/6d.mp3')">3</button>
@@ -124,10 +93,6 @@
         <button onclick="playAudio('data/6g.mp3')">6</button>
         <button onclick="playAudio('data/6h.mp3')">7</button>
         <button onclick="playAudio('data/6i.mp3')">8</button>
-        <button onclick="playAudio('data/6j.mp3')">9</button>
-        <button onclick="playAudio('data/6k.mp3')">10</button>
-        <button onclick="playAudio('data/6l.mp3')">11</button>
-        <button onclick="playAudio('data/6m.mp3')">12</button>
     </div>
 
 </div>
